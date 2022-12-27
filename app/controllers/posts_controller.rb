@@ -1,2 +1,28 @@
 class PostsController < ApplicationController
+  def index
+  end
+
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @post = Post.new(params.require(:post).permit(:room_name, :room_introduction, :usage_fee, :address, :room_picture))
+    if @post.save
+      flash[:notice] = "ルームを登録しました"
+      redirect_to :posts
+    end
+  end
+
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
 end
