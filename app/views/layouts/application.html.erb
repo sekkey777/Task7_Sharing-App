@@ -12,6 +12,23 @@
   </head>
 
   <body>
+    <header>
+      <div class='left-header'>
+        <div class='app-title'>Room Share</div>
+        <div class='search-text'>エリア</div>
+        <div class='search-text'>キーワード</div>
+      </div>
+      <div class='right-header'>
+        <%= link_to 'ログイン', :login, class: 'login-button' %>
+        <%= link_to '登録する', :new_user, class: 'signup-button' %>
+        <%= link_to '設定', :new_user, class: 'signup-button' %>
+      </div>
+    </header>
+
     <%= yield %>
+
+    <footer>
+      <div>@ 2022 SEKKEY.INC</div>
+    </footer>
   </body>
 </html>
