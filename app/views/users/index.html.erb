@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag 'users_index' %> 
+
+
+<div class='main-container'>
+  <div class='page-title'>ユーザー一覧</div>
+  <table>
+    <tr>
+      <th class='account-name'>アカウント名</th>
+      <th class='email'>メールアドレス</th>
+      <th class='icon-img'>アイコン画像</th>
+      <th class='introduction'>自己紹介</th>
+      <th>編集</th>
+      <th>削除</th>
+    </tr>
+
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.icon_img %></td>
+        <td><%= user.introduction %></td>
+        <td><%= link_to '編集', edit_user_path(user) %></td> 
+        <td><%= link_to '削除', user, method: :delete, data: {confirm: "本当に削除しますか？"} %></td> 
+      </tr>
+    <% end %>
+  </table>
+</div>
+

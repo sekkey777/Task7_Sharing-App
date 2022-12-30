@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new
   end
@@ -19,13 +23,33 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   def update
+    @user = User.find(params[:id])
+    if @user.update(user_edit_params)
+      flash[:notice] = 'アカウントを更新しました'
+      redirect_to :users
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:notice] = 'ユーザーを削除しました'
+    redirect_to :users
   end
 
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def user_edit_params
+    params.require(:user).permit(:name, :email, :icon_img, :introduction)
   end
 
 end

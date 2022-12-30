@@ -1,0 +1,48 @@
+<%= stylesheet_link_tag 'users_edit' %>
+
+<div class='main-container'>
+  <div class='page-title'>アカウントを編集</div>
+
+    <%= form_with model: @user do |f| %>
+      <div class='form-content'>
+        <div class='label-box'>
+          <%= f.label :name, 'ユーザー名' %>
+          <a class='required-text'>必須</a>
+        </div>
+        <div class='text-box'>
+          <%= f.text_field :name, class: 'text-form' , placeholder: ' ユーザー名を入力' %>
+        </div>
+      </div>
+      <div class='form-content'>
+        <div class='label-box'>
+          <%= f.label :email, 'メールアドレス' %>
+          <a class='required-text'>必須</a>
+        </div>
+        <div class='text-box'>
+          <%= f.text_field :email, class: 'text-form', placeholder: ' メールアドレスを入力' %>
+        </div>
+      </div>
+      <div class='form-content'>
+        <div class='label-box'>
+          <%= f.label :icon_img, 'アイコン画像' %>
+        </div>
+        <div class='text-box'>
+          <%= f.text_field :icon_img, class: 'text-form', placeholder: 'アイコン画像を入力' %>
+        </div>
+      </div>
+      <div class='form-content introduction-form'>
+        <div class='label-box'>
+          <%= f.label :introduction, '自己紹介' %>
+        </div>
+        <div class='text-box'>
+          <%= f.text_field :introduction, class: 'text-form', placeholder: '自己紹介を入力' %>
+        </div>
+      </div>
+      <div class='form-bottun'>
+        <%= f.submit 'アカウント更新', class: 'update-button' %>
+      </div>
+    <% end %>
+
+
+  </div>
+<div>
