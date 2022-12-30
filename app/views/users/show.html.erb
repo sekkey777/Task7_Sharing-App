@@ -1,0 +1,38 @@
+
+<%
+=begin
+%>
+ ログイン機能実装後に実装（セッションにidを持たせるため） 
+<%
+=end
+%>
+
+<div class='main-container'>
+  <div class='page-title'>新しいアカウントを作成</div>
+
+    <%= form_with model: @user do |f| %>
+      <div>
+        <%= f.label :name, 'ユーザー名' %>
+        <%= f.text_field :name, placeholder: ' ユーザー名' %>
+      </div>
+      <div>
+        <%= f.label :email, 'メールアドレス' %>
+        <%= f.text_field :email, placeholder: ' メールアドレス' %>
+      </div>
+      <div>
+        <%= f.label :password, 'パスワード' %>
+        <%= f.password_field :password, placeholder: ' パスワード' %>
+      </div>
+      <div>
+        <%= f.label :password_digest, 'パスワード（確認）' %>
+        <%= f.password_field :password_confirmation, placeholder: ' パスワード（確認）' %>
+      </div>
+      <div>
+        <%= f.submit 'アカウント登録' %>
+      </div>
+    <% end %>
+
+
+
+  </div>
+<div>
