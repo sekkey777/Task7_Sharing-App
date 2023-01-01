@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2023-01-01 12:30:43
+  end: 2023-01-01 12:30:43
+  reserver: MyString
+
+two:
+  start: 2023-01-01 12:30:43
+  end: 2023-01-01 12:30:43
+  reserver: MyString

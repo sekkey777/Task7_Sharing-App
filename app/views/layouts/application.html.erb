@@ -30,11 +30,11 @@
     </header>
     <nav class='navigasion-box'>
       <ul>
-        <li><%= link_to 'ルーム登録', :new_user, class: 'setting-menu' %></li>
-        <li><%= link_to '予約済みルーム一覧', :new_user, class: 'setting-menu' %></li>
-        <li><%= link_to '登録済みルーム一覧', :new_user, class: 'setting-menu' %></li>
-        <li><%= link_to 'アカウント設定', :new_user, class: 'setting-menu' %></li>
-        <li><%= link_to 'ログアウト', :new_user, class: 'setting-menu' %></li>
+        <li><%= link_to 'ルーム登録', new_user_path, class: 'setting-menu' %></li>
+        <li><%= link_to '予約済みルーム一覧', new_user_path, class: 'setting-menu' %></li>
+        <li><%= link_to '登録済みルーム一覧', posts_path, class: 'setting-menu' %></li>
+        <li><%= link_to 'アカウント設定', new_user_path, class: 'setting-menu' %></li>
+        <li><%= link_to 'ログアウト', new_user_path, class: 'setting-menu' %></li>
       </ul>
     </nav>
 
