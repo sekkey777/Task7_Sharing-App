@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag 'home_index' %>
+
+<div class='main-container'>
+  <div class='page-title'>登録済みルーム一覧</div>
+  <table>
+    <tr>
+      <th class='th-image'>ルーム画像</th>
+      <th class='th-name'>ルーム名</th>
+      <th class='th-introduction'>ルーム紹介</th>
+      <th class='th-fee'>利用料金</th>
+      <th class='th-adress'>住所</th>
+      <th class='th-created_time'>作成日</th>
+      <th class='th-delete'>削除</th>
+    </tr>
+
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.room_picture %></td>
+        <td><%= post.room_name %></td>
+        <td><%= post.room_introduction %></td>
+        <td><%= post.usage_fee %></td>
+        <td><%= post.address %></td>
+        <td><%= post.created_at %></td>
+        <td><%= link_to '予約', new_reservation_path %></td>
+
+      </tr>
+    <% end %>
+  </table>
+</div>
+

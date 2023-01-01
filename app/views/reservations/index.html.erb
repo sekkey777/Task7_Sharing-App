@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag 'reservations_index' %>
+
+<div class='main-container'>
+  <div class='page-title'>予約済みルーム一覧</div>
+  <table>
+    <tr>
+      <th class='th-image'>開始日</th>
+      <th class='th-name'>終了日</th>
+      <th class='th-introduction'>人数</th>
+      <th class='th-fee'>予約者</th>
+      <th class='th-delete'>削除</th>
+    </tr>
+
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td><%= reservation.start %></td>
+        <td><%= reservation.end %></td>
+        <td><%= reservation.number_of_people %></td>
+        <td><%= reservation.reserver %></td>
+        <td><%= link_to 'キャンセル', reservation, method: :delete %></td>
+
+      </tr>
+    <% end %>
+  </table>
+</div>
+

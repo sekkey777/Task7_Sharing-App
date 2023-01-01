@@ -30,4 +30,9 @@ class PostsController < ApplicationController
     flash[:notice] = 'ルームを削除しました'
     redirect_to :posts
   end
+
+  def home
+    @posts = Post.all
+  end
+
 end
