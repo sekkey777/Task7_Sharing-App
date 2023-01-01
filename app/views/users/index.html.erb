@@ -5,6 +5,7 @@
   <div class='page-title'>ユーザー一覧</div>
   <table>
     <tr>
+      <th class='account-name'>Id</th>
       <th class='account-name'>アカウント名</th>
       <th class='email'>メールアドレス</th>
       <th class='icon-img'>アイコン画像</th>
@@ -15,9 +16,10 @@
 
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.id %></td>
         <td><%= user.name %></td>
-        <td class='test-text' ><%= user.email%></td>
-        <td><%= image_tag(user.image) if user.image.attached? %></td>
+        <td><%= user.email%></td>
+        <td><%= image_tag(user.image.variant(resize: '500x100')) if user.image.attached? %></td>
         <td><%= user.introduction %></td>
         <td><%= link_to '確認', user_path(user) %></td> 
         <td><%= link_to '編集', edit_user_path(user) %></td> 
