@@ -24,10 +24,10 @@
       </div>
       <div class='form-content'>
         <div class='label-box'>
-          <%= f.label :icon_img, 'アイコン画像' %>
+          <%= f.label :image, 'アイコン画像' %>
         </div>
         <div class='text-box'>
-          <%= f.text_field :icon_img, class: 'text-form', placeholder: 'アイコン画像を入力' %>
+          <%= f.file_field :image %>
         </div>
       </div>
       <div class='form-content introduction-form'>

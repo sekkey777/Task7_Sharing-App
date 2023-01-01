@@ -1,4 +1,4 @@
-
+<%= stylesheet_link_tag 'users_show' %> 
 
 <div class='main-container'>
   <div class='page-title'>新しいアカウントを作成</div>
@@ -13,7 +13,7 @@
       </div>
       <div>
         <p>アイコン画像</p>
-        <%= @user.icon_img %>
+        <%= image_tag @user.image.variant(resize: '50x50').processed %>
       </div>
       <div>
         <p>自己紹介</p>
