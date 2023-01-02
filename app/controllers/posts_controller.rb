@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    # @posts = current_user.posts
     @posts = Post.all
   end
 
@@ -8,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:room_name, :room_introduction, :usage_fee, :address, :image))
+    @post = Post.new(post_params.merge(user_id: current_user.id))
     if @post.save
       flash[:notice] = "ルームを登録しました"
       redirect_to :posts
@@ -33,6 +34,12 @@ class PostsController < ApplicationController
 
   def home
     @posts = Post.all
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:room_name, :room_introduction, :usage_fee, :address, :image)
   end
 
 end

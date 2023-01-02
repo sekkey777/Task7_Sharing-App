@@ -28,15 +28,17 @@
 =end%>
       </div>
     </header>
-    <nav class='navigasion-box'>
-      <ul>
-        <li><%= link_to 'ルーム登録', new_post_path, class: 'setting-menu' %></li>
-        <li><%= link_to '予約済みルーム一覧', reservations_path, class: 'setting-menu' %></li>
-        <li><%= link_to '登録済みルーム一覧', posts_path, class: 'setting-menu' %></li>
-        <li><%= link_to 'アカウント設定', new_user_path, class: 'setting-menu' %></li>
-        <li><%= link_to 'ログアウト', new_user_path, class: 'setting-menu' %></li>
-      </ul>
-    </nav>
+    <% if current_user %>
+      <nav class='navigasion-box'>
+        <ul>
+            <li><%= link_to 'ルーム登録', new_post_path, class: 'setting-menu' %></li>
+            <li><%= link_to '予約済みルーム一覧', reservations_path, class: 'setting-menu' %></li>
+            <li><%= link_to '登録済みルーム一覧', posts_path, class: 'setting-menu' %></li>
+            <li><%= link_to 'アカウント設定', new_user_path, class: 'setting-menu' %></li>
+            <li><%= link_to 'ログアウト', logout_path, method: :delete, class: 'setting-menu' %></li>
+        </ul>
+      </nav>
+    <% end %>
 
     <%= yield %>
 

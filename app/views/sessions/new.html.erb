@@ -1,0 +1,34 @@
+<%= stylesheet_link_tag 'sessions_login' %>
+
+<div class='main-container'>
+  <div class='page-title'>ログイン</div>
+
+    <%= form_for(:session, url: login_path) do |f| %>
+      <div class='form-content'>
+        <div class='label-box'>
+          <%= f.label :email, 'メールアドレス' %>
+          <a class='required-text'>必須</a>
+        </div>
+        <div class='text-box'>
+          <%= f.email_field :email, class: 'text-form', placeholder: ' メールアドレスを入力', required: true  %>
+        </div>
+      </div>
+      <div class='form-content'>
+        <div class='label-box'>
+          <%= f.label :password, 'パスワード' %>
+          <a class='required-text'>必須</a>
+        </div>
+        <div class='text-box'>
+          <%= f.password_field :password, class: 'text-form', placeholder: ' パスワードを入力', required: true  %>
+        </div>
+      </div>
+      <div class='form-button'>
+        <%= f.submit 'ログイン', class: 'submit-button' %>
+      </div>
+    <% end %>
+    <div class='new-account'>
+      <%= link_to '新しいアカウントを作成', :new_user, class: 'new-account-button' %>
+    </div>
+
+  </div>
+<div>

@@ -1,25 +1,33 @@
 class SessionsController < ApplicationController
+  skip_before_action :login_required
+  
   def new
     @user = User.new
   end
 
   def login
-    # user = User.find_by(email: session_params[:email])
+  end
   
-    # if user && user.authenticate(session_params[:password])
-    #   session[:user_id] = user.id
-    #   redirect_to root_url, notice: 'ログインしました。'    
-    # else
-    #   render :new
-  #  end
+  def create
+    user = User.find_by(email: session_params[:email])
+  
+    if user && user.authenticate(session_params[:password])
+      session[:user_id] = user.id
+      redirect_to root_url, notice: 'ログインしました。'    
+    else
+      render :new
+    end
   end
 
-  def create
+  def destroy
+    reset_session
+    redirect_to login_path, notice: 'ログアウトしました'
   end
+
 
   private
 
-  # def session_params
-  #   params.require(:session).permit(:email, :password)
-  # end
+  def session_params
+    params.require(:session).permit(:email, :password)
+  end
 end

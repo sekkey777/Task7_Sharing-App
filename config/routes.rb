@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   root to: 'posts#index'
 
-  get '/login', to: 'sessions#login'
-  get '/new', to: 'sessions#new'
+  # sessionsコントローラ
+  # get '/login', to: 'sessions#login'
+  get '/login', to: 'sessions#new'
+  # get '/new', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
   get '/home', to: 'posts#home'
 
