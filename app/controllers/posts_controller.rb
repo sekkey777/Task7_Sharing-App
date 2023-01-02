@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:room_name, :room_introduction, :usage_fee, :address, :room_picture))
+    @post = Post.new(params.require(:post).permit(:room_name, :room_introduction, :usage_fee, :address, :image))
     if @post.save
       flash[:notice] = "ルームを登録しました"
       redirect_to :posts

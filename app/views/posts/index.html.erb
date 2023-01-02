@@ -15,7 +15,7 @@
 
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.room_picture %></td>
+        <td><%= image_tag(post.image.variant(resize: '500x100')) if post.image.attached? %></td>
         <td><%= post.room_name %></td>
         <td><%= post.room_introduction %></td>
         <td><%= post.usage_fee %></td>

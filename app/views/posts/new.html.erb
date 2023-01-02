@@ -42,11 +42,11 @@
     </div>
     <div class='form-content'>
       <div class='label-box'>
-        <%= f.label :room_picture, 'ルーム画像' %>
+        <%= f.label :image, 'ルーム画像' %>
         <a class='required-text'>必須</a>
       </div>
       <div class='text-box'>
-        <%= f.text_field :room_picture, class: 'text-form', required: true %>
+        <%= f.file_field :image, required: true %>
       </div>
     </div>
     <div class='form-bottun'>
