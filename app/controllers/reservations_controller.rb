@@ -1,7 +1,8 @@
 class ReservationsController < ApplicationController
 
   def index
-    @reservations = Reservation.all
+    # @reservations = Reservation.all
+    @reservations = current_user.reservations
   end
 
   def new
@@ -9,7 +10,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(params.require(:reservation).permit(:start, :end, :number_of_people, :reserver))
+    @reservation = Reservation.new(reservation_params.merge(user_id: current_user.id))
     if @reservation.save
       flash[:notice] = "ルームを予約しました"
       redirect_to :home
@@ -30,6 +31,12 @@ class ReservationsController < ApplicationController
     @reservation.destroy
     flash[:notice] = '予約をキャンセルしました'
     redirect_to :reservations
+  end
+
+  private
+
+  def reservation_params
+    params.require(:reservation).permit(:start, :end, :number_of_people, :reserver)
   end
 
 end
