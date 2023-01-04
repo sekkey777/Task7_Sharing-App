@@ -4,7 +4,7 @@
 
 // ルーム情報登録
 .main-container {
-  width: 700px;
+  width: 90%;
   margin: 100px auto;
   padding-top: 20px;
   padding-left: 40px;
@@ -15,6 +15,47 @@
 .page-title {
   color: rgb(82, 82, 82);
   font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.reservation-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-box {
+  width: 60%;
+}
+
+.right-box {
+  width: 30%;
+  margin-left: 70px;
+}
+
+.room-name {
+  color: rgb(82, 82, 82);
+  font-size: 25px;
+  font-weight: bold;
+  margin: 20 0 0 0;
+}
+
+.room-address {
+  color: rgb(82, 82, 82);
+  font-size: 18px;
+  margin: 20 0 0 0;
+}
+
+.room-introduction {
+  color: rgb(82, 82, 82);
+  font-size: 18px;
+  margin: 20 0 0 0;
+}
+
+.usage-fee {
+  color: rgb(82, 82, 82);
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
   text-align: center;
@@ -43,7 +84,7 @@
   display: flex;
   align-items: center;
   height: 40px;
-  width: 250px;
+  width: 200px;
   padding-left: 20px;
   font-size: 18px;
   font-weight: bold;
@@ -52,6 +93,7 @@
 .text-box {
   padding-right: 20px;
   flex-grow: 3;
+  width: 80%;
 }
 
 .text-form {

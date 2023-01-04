@@ -7,6 +7,7 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    @post = Post.find(params[:id])
   end
 
   def create

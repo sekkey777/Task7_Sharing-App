@@ -36,6 +36,9 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def reserve
+  end
+
   private
 
   def post_params

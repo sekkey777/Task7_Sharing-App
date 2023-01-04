@@ -13,6 +13,46 @@
   margin-bottom: 30px;
 }
 
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.card-box {
+  border: 1px solid rgb(219, 219, 219);
+  width: 300px;
+}
+
+.room-name {
+  color: rgb(82, 82, 82);
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.room-address {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.usage-fee {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  text-decoration: none;
+  text-align: right;
+  margin-right: 20px;
+}
+
+
+
+
+
+
+
 table {
   width: 100%;
 }

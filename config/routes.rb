@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get '/home', to: 'posts#home'
 
+  # post '/reservation/new/:id', to: 'reservations#new'
+
   # get '/posts', to: 'posts#new'
   # post '/posts', to: 'posts#create'
 
