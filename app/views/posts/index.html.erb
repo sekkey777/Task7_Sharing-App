@@ -1,30 +1,32 @@
-<%= stylesheet_link_tag 'posts_index' %>
+<%= stylesheet_link_tag 'home_index' %>
 
 <div class='main-container'>
   <div class='page-title'>登録済みルーム一覧</div>
-  <table>
-    <tr>
-      <th class='th-image'>ルーム画像</th>
-      <th class='th-name'>ルーム名</th>
-      <th class='th-introduction'>ルーム紹介</th>
-      <th class='th-fee'>利用料金</th>
-      <th class='th-adress'>住所</th>
-      <th class='th-created_time'>作成日</th>
-      <th class='th-delete'>削除</th>
-    </tr>
 
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= image_tag(post.image.variant(resize: '500x100')) if post.image.attached? %></td>
-        <td><%= post.room_name %></td>
-        <td><%= post.room_introduction %></td>
-        <td><%= post.usage_fee %></td>
-        <td><%= post.address %></td>
-        <td><%= post.created_at %></td>
-        <td><%= link_to '削除', post, method: :delete %></td>
+  <p><%= @count %>件が見つかりました</p>
 
-      </tr>
+  <div class='search-form'>
+    <%= search_form_for @q do |f| %>
+      <%= f.label :address_cont, "エリア" %>
+      <%= f.search_field :address_cont, placeholder: 'エリア' %>
+      <%= f.label :room_name_cont, "エリア" %>
+      <%= f.search_field :address_cont, placeholder: 'フリーワード' %>
+      <%= f.submit "検索" %>
     <% end %>
-  </table>
+  </div>
+
+  <div class='content'>
+    <% @posts.each do |post| %>
+      <div class='card-box'>
+        <%= link_to(new_reservation_path(id: post.id)) do%>
+          <p><%= image_tag(post.image.variant(resize: 299)) if post.image.attached? %></p>
+          <p class='room-name'><%= post.room_name %></p>
+          <p class='room-address'><%= post.address %></p>
+          <p class='usage-fee'>1人 ¥<%= post.usage_fee %> /日</p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
 </div>
 

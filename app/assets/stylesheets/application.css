@@ -57,6 +57,16 @@ header {
   align-items: center;
 }
 
+.name {
+  color: rgb(255, 255, 255);
+  margin-right: 10px;
+}
+
+.user-icon {
+  margin-right: 10px;
+  height: 70%;
+}
+
 /* ログインボタン */
 .login-button {
   height: 50%;

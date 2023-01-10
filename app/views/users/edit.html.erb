@@ -27,8 +27,15 @@
           <%= f.label :image, 'アイコン画像' %>
         </div>
         <div class='text-box'>
-          <%= f.file_field :image %>
+          <label>アップロード
+            <%= f.file_field :image %>
+          </label>
         </div>
+        <% if @user.image.attached? %>
+          <%= image_tag @user.image.variant(resize: '500x100').processed %>
+        <% else %>
+          <%= image_tag 'user-icon.png', class: 'user-icon' %>
+        <% end %>
       </div>
       <div class='form-content introduction-form'>
         <div class='label-box'>

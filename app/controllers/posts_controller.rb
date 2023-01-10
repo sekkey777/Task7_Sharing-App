@@ -1,7 +1,13 @@
 class PostsController < ApplicationController
+  # def index
+  #   @posts = current_user.posts
+  #   @posts = Post.all
+  # end
+
   def index
-    # @posts = current_user.posts
-    @posts = Post.all
+    @q = Post.ransack(params[:q])
+    @posts = @q.result
+    @count = @posts.count
   end
 
   def new
@@ -33,10 +39,16 @@ class PostsController < ApplicationController
   end
 
   def home
-    @posts = Post.all
+    @posts = current_user.posts
   end
 
-  def reserve
+  # def home
+  #   @q = Post.ransack(params[:q])
+  #   @posts = @q.result
+  # end
+
+  def search
+    
   end
 
   private

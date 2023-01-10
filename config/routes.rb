@@ -2,20 +2,16 @@ Rails.application.routes.draw do
   root to: 'posts#index'
 
   # sessionsコントローラ
-  # get '/login', to: 'sessions#login'
   get '/login', to: 'sessions#new'
-  # get '/new', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  # postsコントローラ
   get '/home', to: 'posts#home'
 
-  # post '/reservation/new/:id', to: 'reservations#new'
-
-  # get '/posts', to: 'posts#new'
-  # post '/posts', to: 'posts#create'
-
-  resources :posts
+  resources :posts do
+    post '/searches', to: 'searches#search'
+  end
   resources :users
   resources :reservations
 

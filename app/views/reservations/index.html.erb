@@ -8,15 +8,17 @@
       <th class='th-name'>終了日</th>
       <th class='th-introduction'>人数</th>
       <th class='th-fee'>予約者</th>
+      <th class='th-created-at'>予約日</th>
       <th class='th-delete'>削除</th>
     </tr>
 
     <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= reservation.start %></td>
-        <td><%= reservation.end %></td>
+        <td><%= reservation.start.strftime('%Y/%m/%d') %></td>
+        <td><%= reservation.end.strftime('%Y/%m/%d') %></td>
         <td><%= reservation.number_of_people %></td>
         <td><%= reservation.reserver %></td>
+        <td><%= reservation.created_at.strftime('%Y/%m/%d %H:%M') %></td>
         <td><%= link_to 'キャンセル', reservation, method: :delete %></td>
 
       </tr>

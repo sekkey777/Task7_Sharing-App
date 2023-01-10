@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_edit_params)
       flash[:notice] = 'アカウントを更新しました'
-      redirect_to :users
+      redirect_to user_path
     end
   end
 
