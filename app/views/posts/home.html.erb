@@ -3,27 +3,28 @@
 <div class='main-container'>
   <div class='page-title'>登録済みルーム一覧</div>
   <table>
-    <tr>
+    <tr>      
       <th class='th-image'>ルーム画像</th>
       <th class='th-name'>ルーム名</th>
       <th class='th-introduction'>ルーム紹介</th>
       <th class='th-fee'>利用料金</th>
       <th class='th-adress'>住所</th>
-      <th class='th-created_time'>作成日</th>
+      <th class='th-created_time'>登録日</th>
       <th class='th-delete'>削除</th>
     </tr>
 
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= image_tag(post.image.variant(resize: '500x100')) if post.image.attached? %></td>
-        <td><%= post.room_name %></td>
-        <td><%= post.room_introduction %></td>
-        <td>¥<%= post.usage_fee.to_s(:delimited) %></td>
-        <td><%= post.address %></td>
-        <td><%= post.created_at.strftime('%Y/%m/%d') %></td>
-        <td><%= link_to '削除', post, method: :delete %></td>
-
-      </tr>
+      <%= link_to edit_post_path(post) do%>
+        <tr>
+          <td><%= image_tag(post.image.variant(resize: '500x100')) if post.image.attached? %></td>
+          <td><%= post.room_name %></td>
+          <td><%= post.room_introduction %></td>
+          <td>¥<%= post.usage_fee.to_s(:delimited) %></td>
+          <td><%= post.address %></td>
+          <td><%= post.created_at.strftime('%Y/%m/%d') %></td>
+          <td><%= link_to '削除', post, method: :delete %></td>
+        </tr>
+      <% end %>
     <% end %>
   </table>
 </div>

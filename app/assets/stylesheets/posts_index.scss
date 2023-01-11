@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .main-container {
-  margin: 100px;
+  margin: 20px;
 }
 
 .page-title {
@@ -18,46 +18,18 @@ table {
 }
 
 table th {
-  border-top: 1px solid rgb(219, 219, 219);
-  border-bottom: 1px solid rgb(219, 219, 219);
-  padding: 10px 20px;
-  text-align: center;
-}
-
-.th-image {
-  background-color: rgb(255, 205, 205);
-  width: 200px;
-}
-
-.th-name {
-  background-color: rgb(245, 255, 205);
-  width: 200px;
+  border-bottom: 3px solid rgb(219, 219, 219);
+  font-size: 15px;
+  text-align: left;
 }
 
 .th-introduction {
-  background-color: rgb(205, 255, 216);
-  width: 200px;
-}
-
-.th-fee {
-  background-color: rgb(205, 239, 255);
-  width: 200px;
-}
-
-.th-adress {
-  background-color: rgb(228, 205, 255);
-  width: 200px;
-}
-
-.th-created_time {
-  background-color: rgb(214, 205, 255);
-  width: 200px;
+  width: 40%;
 }
 
 table td {
-  border-top: 1px solid rgb(219, 219, 219);
+  padding: 10px;
   border-bottom: 1px solid rgb(219, 219, 219);
-  height: 200px;
-  padding: 10px 20px;
-  text-align: center;
+  font-size: 12px;
+  text-align: left;
 }

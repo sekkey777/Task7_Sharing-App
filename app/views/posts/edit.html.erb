@@ -1,0 +1,56 @@
+<%= stylesheet_link_tag 'posts_new' %>
+
+<div class='main-container'>
+  <p class='page-title'>ルーム情報登録</p>
+
+  <%= form_with model: @post do |f| %>
+    <div class='form-content'>
+      <div class='label-box'>
+        <%= f.label :room_name, 'ルーム名', required: true %>
+        <a class='required-text'>必須</a>
+      </div>
+      <div class='text-box'>
+        <%= f.text_field :room_name, class: 'text-form', placeholder: 'ルーム名を入力', required: true %>
+      </div>
+    </div>
+    <div class='form-content'>
+      <div class='label-box'>
+        <%= f.label :room_introduction, 'ルーム紹介' %>
+        <a class='required-text'>必須</a>
+      </div>
+      <div class='text-box'>
+        <%= f.text_field :room_introduction, class: 'text-form', placeholder: 'ルーム説明を入力', required: true %>
+      </div>
+    </div>
+    <div class='form-content'>
+      <div class='label-box'>
+        <%= f.label :usage_fee, '料金' %>
+        <a class='required-text'>必須</a>
+      </div>
+      <div class='text-box'>
+        <%= f.text_field :usage_fee, class: 'text-form', placeholder: '一日当あたりの料金を入力', required: true %>
+      </div>
+    </div>
+    <div class='form-content'>
+      <div class='label-box'>
+        <%= f.label :address, '住所' %>
+        <a class='required-text'>必須</a>
+      </div>
+      <div class='text-box'>
+        <%= f.text_field :address, class: 'text-form', placeholder: '住所を入力', required: true %>
+      </div>
+    </div>
+    <div class='form-content'>
+      <div class='label-box'>
+        <%= f.label :image, 'ルーム画像' %>
+        <a class='required-text'>必須</a>
+      </div>
+      <div class='text-box'>
+        <%= f.file_field :image, required: true %>
+      </div>
+    </div>
+    <div class='form-bottun'>
+      <%= f.submit '登録', class: 'submit-button' %>
+    </div>
+  <% end %>
+</div>

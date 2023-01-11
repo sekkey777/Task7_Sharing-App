@@ -6,7 +6,7 @@
     <%= form_with model: @reservation do |f| %>
       <div class='form-content'>
         <div class='label-box'>
-          <%= f.label :starg, '開始日' %>
+          <%= f.label :starg, 'チェックイン' %>
           <a class='required-text'>必須</a>
         </div>
         <div class='text-box'>
@@ -15,7 +15,7 @@
       </div>
       <div class='form-content'>
         <div class='label-box'>
-          <%= f.label :end, '終了日' %>
+          <%= f.label :end, 'チェックアウト' %>
           <a class='required-text'>必須</a>
         </div>
         <div class='text-box'>
@@ -24,7 +24,7 @@
       </div>
       <div class='form-content'>
         <div class='label-box'>
-          <%= f.label :number_of_people, '人数' %>
+          <%= f.label :number_of_people, '宿泊人数' %>
           <a class='required-text'>必須</a>
         </div>
         <div class='text-box'>

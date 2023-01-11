@@ -52,6 +52,7 @@
         <div class='form-bottun'>
           <%= f.submit '予約する', class: 'submit-button' %>
         </div>
+        <%= f.hidden_field :post_id, :value => @post.id %>
       <% end %>
 
       <div class='login-page'>
