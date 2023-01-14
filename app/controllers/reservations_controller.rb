@@ -1,11 +1,7 @@
 class ReservationsController < ApplicationController
 
   def index
-    # @reservations = Reservation.all
     @reservations = current_user.reservations
-    # binding.pry
-    # @posts = Post.find(id: params[@reservations.post_id])
-    # @posts = Post.find_by(id: params[:reservation][:post_id])
   end
 
   def new
@@ -13,13 +9,19 @@ class ReservationsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def confirm
+    @reservation = Reservation.new(reservation_params)
+    @post = Post.find(reservation_params[:post_id])
+  end
+
   def create
-    # @post = Post.find(params[:reservation][:id])
-    # binding.pry
     @reservation = Reservation.new(reservation_params.merge(user_id: current_user.id))
+    @post = Post.find(reservation_params[:post_id])
     if @reservation.save
       flash[:notice] = "ルームを予約しました"
-      redirect_to :post
+      redirect_to posts_path
+    else
+      redirect_to new_reservation_path(id: @post.id), flash: { error: @reservation.errors.full_messages }
     end
   end
 
@@ -42,7 +44,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:start, :end, :number_of_people, :reserver, :post_id)
+    params.require(:reservation).permit(:start, :end, :number_of_people, :post_id)
   end
 
 end

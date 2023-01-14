@@ -16,18 +16,15 @@
       <p class='room-name'><%= @post.room_name %></p>
       <p class='room-address'><%= @post.address %></p>
       <p class='room-introduction'><%= @post.room_introduction %></p>
-    </div>
 
-    <div class='right-box'>
-      <p class='usage-fee'>1人 ¥<%= @post.usage_fee %> /日</p>
-      <%= form_with(model: @reservation, url: reservations_confirm_path(@reservation)) do |f| %>
+      <%= form_with model: @reservation do |f| %>
         <div class='form-content'>
           <div class='label-box'>
             <%= f.label :starg, '開始日' %>
             <a class='required-text'>必須</a>
           </div>
           <div class='text-box'>
-            <%= f.date_field :start, class: 'text-form' %>
+            <%= f.date_field :start, readonly: true, class: 'text-form' %>
           </div>
         </div>
         <div class='form-content'>
@@ -36,7 +33,7 @@
             <a class='required-text'>必須</a>
           </div>
           <div class='text-box'>
-            <%= f.date_field :end, class: 'text-form' %>
+            <%= f.date_field :end, readonly: true, class: 'text-form' %>
           </div>
         </div>
         <div class='form-content'>
@@ -45,7 +42,7 @@
             <a class='required-text'>必須</a>
           </div>
           <div class='text-box'>
-            <%= f.text_field :number_of_people, class: 'text-form' %>
+            <%= f.text_field :number_of_people, readonly: true, class: 'text-form' %>
           </div>
         </div>
         <div class='form-bottun'>
@@ -54,10 +51,17 @@
         <%= f.hidden_field :post_id, :value => @post.id %>
       <% end %>
 
-      <div class='login-page'>
+      <p class='room-introduction'><%= @reservation.start %></p>
+      <p class='room-introduction'><%= @reservation.end %></p>
+      <p class='room-introduction'><%= @reservation.number_of_people %></p>
+    </div>
+    <%
+=begin%>
+ <%= link_to '登録する', posts_path, @reservation, method: :post, class: 'login-page-button' %> 
+<%
+=end%>
+    <div class='login-page'>
         <%= link_to '戻る', posts_path, class: 'login-page-button' %>
       </div>
-    </div>
-
   </div>
 </div>

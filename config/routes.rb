@@ -9,9 +9,12 @@ Rails.application.routes.draw do
   # postsコントローラ
   get '/home', to: 'posts#home'
 
+  post 'reservations/confirm', to: 'reservations#confirm'
+
   resources :posts do
     post '/searches', to: 'searches#search'
   end
+
   resources :users
   resources :reservations
 
