@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # postsコントローラ
   get '/home', to: 'posts#home'
-
+  get '/top', to: 'posts#top'
   post 'reservations/confirm', to: 'reservations#confirm'
 
   resources :posts do

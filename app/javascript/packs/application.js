@@ -3,6 +3,7 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
@@ -12,18 +13,27 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-// function settingButton(el){
-//   console.log(el.style.display)
-//   if (el.style.display=='') {
-//     el.style.display='none';
-//   } else {
-//     el.style.display='';
-//   }
-// }
+window.onload = function() {
+  // ボタン要素を取得
+  const icon = document.getElementById('user-icon');
+  // 表示・非表示を切り替える要素を取得
+  const navi = document.getElementById('navigasion-box');
+  
+  // 初期状態では非表示
+  navi.style.display = 'none';
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   const button = document.querySelector('.setting-button');
-//   const navigation = document.querySelector('.navigasion-box');
-//   navigation.style.display = 'none';
-//   button.addEventListener("click", () => { settingButton(navigation) })
-// })
+  // styleのdisplayを変更するための関数
+  const changeElement = (navi) => {
+    console.log("1")
+    if(navi.style.display == ''){
+      console.log("2")
+      navi.style.display = 'none';
+    } else {
+      console.log("3")
+      navi.style.display = '';
+    }
+  }
+
+  icon.addEventListener("click", () => changeElement(navi));
+
+};

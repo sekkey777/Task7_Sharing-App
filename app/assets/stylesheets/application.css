@@ -16,6 +16,12 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 
+/* body */
+body {
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
 /* ================= ヘッダー全体 ================= */
 header {
   background-color: rgb(0, 0, 0);
@@ -29,6 +35,8 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .app-title {
@@ -36,7 +44,7 @@ header {
   color: rgb(255, 255, 255);
   font-size: 50px;
   font-family: 'Sacramento', cursive;
-  padding: 10px 20px;
+  text-decoration: none;
 }
 
 .search-text {
@@ -62,7 +70,7 @@ header {
   margin-right: 10px;
 }
 
-.user-icon {
+#user-icon {
   margin-right: 10px;
   height: 70%;
 }
@@ -114,7 +122,7 @@ header {
 }
 
 /* ================= ナビゲーションメニュー ================= */
-.navigasion-box {
+#navigasion-box {
   height: 180px;
   width: 180px;
   background-color: rgb(255, 255, 255);
@@ -124,17 +132,15 @@ header {
 }
 
 .navigasion-box ul {
-  border: 1px solid rgb(219, 219, 219);
   margin: 5px;
   height: 100%;
-  display: block;
-  align-items: center;
 }
 
 .navigasion-box li {
   padding-top: 8px;
   list-style: none;
-  text-align: center;
+  text-align: left;
+  padding-left: 10px;
 }
 
 .setting-menu {
@@ -154,6 +160,9 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 footer div {
