@@ -123,24 +123,22 @@ header {
 
 /* ================= ナビゲーションメニュー ================= */
 #navigasion-box {
-  height: 180px;
+  height: 150px;
   width: 180px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(221, 243, 241);
   position: absolute;
   z-index: 1;
   right: 0px;
+  padding-left: 10px;
 }
 
 .navigasion-box ul {
-  margin: 5px;
   height: 100%;
 }
 
 .navigasion-box li {
-  padding-top: 8px;
   list-style: none;
   text-align: left;
-  padding-left: 10px;
 }
 
 .setting-menu {
