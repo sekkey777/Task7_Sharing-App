@@ -20,7 +20,9 @@ window.onload = function() {
   const navi = document.getElementById('navigasion-box');
   
   // 初期状態では非表示
-  navi.style.display = 'none';
+  if(navi){
+    navi.style.display = 'none';
+  }
 
   // styleのdisplayを変更するための関数
   const changeElement = (navi) => {
@@ -34,6 +36,8 @@ window.onload = function() {
     }
   }
 
-  icon.addEventListener("click", () => changeElement(navi));
+  if(icon){
+    icon.addEventListener("click", () => changeElement(navi));
+  }
 
 };
