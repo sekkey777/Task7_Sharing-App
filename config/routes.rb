@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'posts#index'
 
   # sessionsコントローラ
-  get '/login', to: 'sessions#new'
+  get '/login', to: 'sessions#login'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 

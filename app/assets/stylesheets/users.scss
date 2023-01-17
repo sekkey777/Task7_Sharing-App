@@ -62,12 +62,32 @@
   border-radius: 5px;
 }
 
-// ボタンのCSS
-// .form-bottun {
-//   padding-top: 30px;
-//   padding-bottom: 30px;
-//   border-top: 1px solid rgb(219, 219, 219);
-// }
+.user-icon {
+  margin-right: 10px;
+  height: 70%;
+}
+
+.introduction-form {
+  height: 120px;
+}
+
+.update-button {
+  background-color: rgb(36, 139, 229);
+  color: rgb(255, 255, 255);
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 3px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.update-button:hover {
+  background-color: rgb(120, 184, 241);
+  cursor: pointer;
+}
 
 .submit-button {
   background-color: rgb(36, 139, 229);
