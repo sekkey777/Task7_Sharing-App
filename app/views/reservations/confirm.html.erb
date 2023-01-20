@@ -38,7 +38,7 @@
           </tr>
           <tr>
             <th>合計料金</th> 
-            <td>¥ <%= (@reservation.number_of_people * @post.usage_fee).to_s(:delimited) %></td>
+            <td>¥ <%= ((@reservation.number_of_people * @post.usage_fee) * ((@reservation.end-@reservation.start)/86400).to_i).to_s(:delimited) %></td>
           </tr>
         </table>
 
