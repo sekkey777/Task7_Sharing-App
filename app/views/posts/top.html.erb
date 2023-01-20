@@ -18,30 +18,31 @@
       </div>
     <% end %>
   </div>
-
-
-  <div class='sub-container'>
-    <h2>おすすめエリア</h2>
-
-    <div class='search'>
-      <%= search_form_for @q do |f| %>
-        <%= f.hidden_field :address_cont, :value => '東京' %>
-        <%= f.submit "東京", class: 'search-box tokyo' %>
-      <% end %>
-      <%= search_form_for @q do |f| %>
-        <%= f.hidden_field :address_cont, :value => '大阪' %>
-        <%= f.submit "大阪", class: 'search-box osaka' %>
-      <% end %>
-      <%= search_form_for @q do |f| %>
-        <%= f.hidden_field :address_cont, :value => '京都' %>
-        <%= f.submit "京都", class: 'search-box kyoto' %>
-      <% end %>
-      <%= search_form_for @q do |f| %>
-        <%= f.hidden_field :address_cont, :value => '札幌' %>
-        <%= f.submit "札幌", class: 'search-box sapporo' %>
-      <% end %>
-    </div>
-  </div>
-
 </div>
+
+
+<div class='sub-container'>
+  <h2>おすすめエリア</h2>
+
+  <div class='search'>
+    <%= search_form_for @q do |f| %>
+      <%= f.hidden_field :address_cont, :value => '東京' %>
+      <%= f.submit "東京", class: 'search-box tokyo' %>
+    <% end %>
+    <%= search_form_for @q do |f| %>
+      <%= f.hidden_field :address_cont, :value => '大阪' %>
+      <%= f.submit "大阪", class: 'search-box osaka' %>
+    <% end %>
+    <%= search_form_for @q do |f| %>
+      <%= f.hidden_field :address_cont, :value => '京都' %>
+      <%= f.submit "京都", class: 'search-box kyoto' %>
+    <% end %>
+    <%= search_form_for @q do |f| %>
+      <%= f.hidden_field :address_cont, :value => '札幌' %>
+      <%= f.submit "札幌", class: 'search-box sapporo' %>
+    <% end %>
+  </div>
+</div>
+
+
 

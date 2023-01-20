@@ -26,7 +26,6 @@
         <td><%= reservation.end.strftime('%Y/%m/%d') %></td>
         <td><%= reservation.created_at.strftime('%Y/%m/%d %H:%M') %></td>
         <td><%= link_to 'キャンセル', reservation, method: :delete %></td>
-
       </tr>
     <% end %>
   </table>

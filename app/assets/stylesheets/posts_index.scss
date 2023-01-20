@@ -2,34 +2,60 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.main-container {
-  margin: 20px;
+// 検索フォーム
+.search-box {
+  background-color: rgb(219, 219, 219);
+  padding: 40px;
+  display: flex;
+  justify-content: center;
 }
 
-.page-title {
-  color: rgb(82, 82, 82);
-  font-size: 25px;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-
-table {
-  width: 100%;
-}
-
-table th {
-  border-bottom: 3px solid rgb(219, 219, 219);
-  font-size: 15px;
-  text-align: left;
-}
-
-.th-introduction {
-  width: 40%;
-}
-
-table td {
+.form {
+  width: 300px;
+  height: 40px;
   padding: 10px;
-  border-bottom: 1px solid rgb(219, 219, 219);
-  font-size: 12px;
-  text-align: left;
+  margin-right: 10px;
+}
+
+.search-button {
+  height: 30px;
+}
+
+// 検索結果表示エリア
+.result-text {
+  padding: 0px 50px;
+}
+.content {
+  padding: 0px 50px 30px 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 20px;
+}
+
+.card-box {
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 25px;
+  width: 400px;
+  background-color: rgb(255, 252, 252);
+  padding-top: 10px;
+}
+
+.room-name {
+  color: rgb(82, 82, 82);
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.room-address {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+.usage-fee {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  text-align: right;
+  margin-right: 20px;
 }

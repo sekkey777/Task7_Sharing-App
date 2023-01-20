@@ -12,10 +12,17 @@ class ReservationsController < ApplicationController
   def confirm
     @reservation = Reservation.new(reservation_params)
     @post = Post.find(reservation_params[:post_id])
+    
+    # confirmアクション実行時にバリデーションチェックを実行したい
+    # if @reservation.errors.full_messages.present?
+    #   flash[:error] = @reservation.errors.full_messages
+    #   redirect_to new_reservation_path(id: @post.id), flash: { error: @reservation.errors.full_messages }
+    # end
   end
 
   def create
     @reservation = Reservation.new(reservation_params.merge(user_id: current_user.id))
+    # binding.pry
     @post = Post.find(reservation_params[:post_id])
     if @reservation.save
       flash[:notice] = "ルームを予約しました"

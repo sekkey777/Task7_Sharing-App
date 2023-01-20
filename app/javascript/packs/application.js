@@ -14,24 +14,25 @@ Turbolinks.start()
 ActiveStorage.start()
 
 window.onload = function() {
+  console.log('画面が更新されました')
   // ボタン要素を取得
   const icon = document.getElementById('user-icon');
   // 表示・非表示を切り替える要素を取得
   const navi = document.getElementById('navigasion-box');
   
   // 初期状態では非表示
-  if(navi){
+  if(navi) {
     navi.style.display = 'none';
   }
 
   // styleのdisplayを変更するための関数
   const changeElement = (navi) => {
-    console.log("1")
+    console.log("ボタンが押されました")
     if(navi.style.display == ''){
-      console.log("2")
+      console.log("非表示にしました")
       navi.style.display = 'none';
     } else {
-      console.log("3")
+      console.log("表示しました")
       navi.style.display = '';
     }
   }
