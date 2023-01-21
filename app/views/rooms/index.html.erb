@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag 'posts_index' %>
+<%= stylesheet_link_tag 'rooms_index' %>
 
 
 <div class='main-container'>
@@ -16,13 +16,13 @@
   <p class='result-text'><%= @count %>件が見つかりました</p>
   
   <div class='content'>
-    <% @posts.each do |post| %>
+    <% @rooms.each do |room| %>
       <div class='card-box'>
-        <%= link_to(new_reservation_path(id: post.id)) do%>
-          <p><%= image_tag(post.image.variant(resize: 399)) if post.image.attached? %></p>
-          <p class='room-name'><%= post.room_name %></p>
-          <p class='room-address'><%= post.address %></p>
-          <p class='usage-fee'>1人 ¥<%= post.usage_fee %> /日</p>
+        <%= link_to(new_reservation_path(id: room.id)) do%>
+          <p><%= image_tag(room.image.variant(resize: 399)) if room.image.attached? %></p>
+          <p class='room-name'><%= room.room_name %></p>
+          <p class='room-address'><%= room.address %></p>
+          <p class='usage-fee'>1人 ¥<%= room.usage_fee %> /日</p>
         <% end %>
       </div>
     <% end %>

@@ -13,11 +13,11 @@
   <div class='page-title'>この部屋を予約する</div>
 
   <div class='reservation-box'>
-    <p><%= image_tag(@post.image.variant(resize: 720)) if @post.image.attached? %></p>
+    <p><%= image_tag(@room.image.variant(resize: 720)) if @room.image.attached? %></p>
     <div class='room-info-box'>
-      <p class='room-name'><%= @post.room_name %></p>
-      <p class='room-address'><%= @post.address %></p>
-      <p class='room-introduction'><%= @post.room_introduction %></p>
+      <p class='room-name'><%= @room.room_name %></p>
+      <p class='room-address'><%= @room.address %></p>
+      <p class='room-introduction'><%= @room.room_introduction %></p>
     </div>
 
     <div class='reservation-info-box'>
@@ -38,15 +38,15 @@
           </tr>
           <tr>
             <th>合計料金</th> 
-            <td>¥ <%= ((@reservation.number_of_people * @post.usage_fee) * ((@reservation.end-@reservation.start)/86400).to_i).to_s(:delimited) %></td>
+            <td>¥ <%= ((@reservation.number_of_people * @room.usage_fee) * ((@reservation.end-@reservation.start)/86400).to_i).to_s(:delimited) %></td>
           </tr>
         </table>
 
-        <%= f.hidden_field :post_id, :value => @post.id %>
+        <%= f.hidden_field :room_id, :value => @room.id %>
         <%= f.submit '予約を確定する', class: 'submit-button' %>
 
       <% end %>
-      <%= link_to '戻る', posts_path, class: 'back-button' %>
+      <%= link_to '戻る', rooms_path, class: 'back-button' %>
     </div>
 
   </div>

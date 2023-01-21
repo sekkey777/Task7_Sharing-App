@@ -17,7 +17,7 @@ Rails.application.config.assets.precompile += %w(
   style.css
   application.css
 
-  posts.css
+  rooms.css
   sessions.css
-  posts/*
+  rooms/*
 )

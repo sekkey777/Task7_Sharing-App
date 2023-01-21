@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag 'rooms_home' %>
+
+<div class='main-container'>
+  <div class='page-title'>登録済みルーム一覧</div>
+  <table>
+    <tr>      
+      <th class='th-image'>ルーム画像</th>
+      <th class='th-name'>ルーム名</th>
+      <th class='th-introduction'>ルーム紹介</th>
+      <th class='th-fee'>利用料金</th>
+      <th class='th-adress'>住所</th>
+      <th class='th-created_time'>登録日</th>
+      <th class='th-delete'>削除</th>
+    </tr>
+
+    <% @rooms.each do |room| %>
+      <%= link_to edit_room_path(room) do%>
+        <tr>
+          <td><%= image_tag(room.image.variant(resize: '500x100')) if room.image.attached? %></td>
+          <td><%= room.room_name %></td>
+          <td><%= room.room_introduction %></td>
+          <td>¥<%= room.usage_fee.to_s(:delimited) %></td>
+          <td><%= room.address %></td>
+          <td><%= room.created_at.strftime('%Y/%m/%d') %></td>
+          <td><%= link_to '削除', room, method: :delete %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
+

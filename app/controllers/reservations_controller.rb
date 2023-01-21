@@ -6,29 +6,29 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
-    @post = Post.find(params[:id])
+    @room = Room.find(params[:id])
   end
 
   def confirm
     @reservation = Reservation.new(reservation_params)
-    @post = Post.find(reservation_params[:post_id])
+    @room = Room.find(reservation_params[:room_id])
     
     # confirmアクション実行時にバリデーションチェックを実行したい
     # if @reservation.errors.full_messages.present?
     #   flash[:error] = @reservation.errors.full_messages
-    #   redirect_to new_reservation_path(id: @post.id), flash: { error: @reservation.errors.full_messages }
+    #   redirect_to new_reservation_path(id: @room.id), flash: { error: @reservation.errors.full_messages }
     # end
   end
 
   def create
     @reservation = Reservation.new(reservation_params.merge(user_id: current_user.id))
     # binding.pry
-    @post = Post.find(reservation_params[:post_id])
+    @room = Room.find(reservation_params[:room_id])
     if @reservation.save
       flash[:notice] = "ルームを予約しました"
-      redirect_to posts_path
+      redirect_to rooms_path
     else
-      redirect_to new_reservation_path(id: @post.id), flash: { error: @reservation.errors.full_messages }
+      redirect_to new_reservation_path(id: @room.id), flash: { error: @reservation.errors.full_messages }
     end
   end
 
@@ -51,7 +51,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:start, :end, :number_of_people, :post_id)
+    params.require(:reservation).permit(:start, :end, :number_of_people, :room_id)
   end
 
 end

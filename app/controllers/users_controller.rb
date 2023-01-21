@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "アカウントを登録しました"
-      redirect_to :posts
+      redirect_to :rooms
     else
       render :new
     end

@@ -17,11 +17,11 @@
 
     <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= image_tag(reservation.post.image.variant(resize: '500x100')) %></td>
-        <td><%= reservation.post.room_name %></td>
-        <td><%= reservation.post.room_introduction %></td>
+        <td><%= image_tag(reservation.room.image.variant(resize: '500x100')) %></td>
+        <td><%= reservation.room.room_name %></td>
+        <td><%= reservation.room.room_introduction %></td>
         <td><%= reservation.number_of_people %></td>
-        <td>¥ <%= ((reservation.number_of_people * reservation.post.usage_fee) * ((reservation.end-reservation.start)/86400).to_i).to_s(:delimited) %></td>
+        <td>¥ <%= ((reservation.number_of_people * reservation.room.usage_fee) * ((reservation.end-reservation.start)/86400).to_i).to_s(:delimited) %></td>
         <td><%= reservation.start.strftime('%Y/%m/%d') %></td>
         <td><%= reservation.end.strftime('%Y/%m/%d') %></td>
         <td><%= reservation.created_at.strftime('%Y/%m/%d %H:%M') %></td>

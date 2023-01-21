@@ -4,7 +4,7 @@ class Reservation < ApplicationRecord
   validates :start, presence: true
   validates :end, presence: true
   validates :number_of_people, presence: true
-  validates :post_id, presence: true
+  validates :room_id, presence: true
 
   validate :start_finish_check
   validate :strat_check
@@ -20,6 +20,6 @@ class Reservation < ApplicationRecord
 
   # リレーション
   belongs_to :user
-  belongs_to :post
+  belongs_to :room
   
 end

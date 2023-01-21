@@ -33,7 +33,7 @@
     <% if current_user %>
       <nav id='navigasion-box'>
         <ul>
-            <li><%= link_to 'ルーム登録', new_post_path, class: 'setting-menu' %></li>
+            <li><%= link_to 'ルーム登録', new_room_path, class: 'setting-menu' %></li>
             <li><%= link_to '予約済みルーム一覧', reservations_path, class: 'setting-menu' %></li>
             <li><%= link_to '登録済みルーム一覧', 'home', class: 'setting-menu' %></li>
             <li><%= link_to 'アカウント設定', edit_user_path(current_user.id), class: 'setting-menu' %></li>

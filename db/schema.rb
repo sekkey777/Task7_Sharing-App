@@ -40,18 +40,6 @@ ActiveRecord::Schema.define(version: 2023_01_10_172838) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.string "room_name"
-    t.string "room_introduction"
-    t.integer "usage_fee"
-    t.string "address"
-    t.string "room_picture"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id", null: false
-    t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
   create_table "reservations", force: :cascade do |t|
     t.datetime "start"
     t.datetime "end"
@@ -60,9 +48,21 @@ ActiveRecord::Schema.define(version: 2023_01_10_172838) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "number_of_people"
     t.integer "user_id", null: false
-    t.integer "post_id", null: false
-    t.index ["post_id"], name: "index_reservations_on_post_id"
+    t.integer "room_id", null: false
+    t.index ["room_id"], name: "index_reservations_on_room_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "room_name"
+    t.string "room_introduction"
+    t.integer "usage_fee"
+    t.string "address"
+    t.string "room_picture"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

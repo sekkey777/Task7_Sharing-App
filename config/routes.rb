@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  root to: 'posts#index'
+  root to: 'rooms#index'
 
   # sessionsコントローラ
   get '/login', to: 'sessions#login'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  # postsコントローラ
-  get '/home', to: 'posts#home'
-  get '/top', to: 'posts#top'
+  # roomsコントローラ
+  get '/home', to: 'rooms#home'
+  get '/top', to: 'rooms#top'
   post 'reservations/confirm', to: 'reservations#confirm'
 
-  resources :posts do
+  resources :rooms do
     post '/searches', to: 'searches#search'
   end
 

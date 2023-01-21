@@ -1,6 +1,6 @@
-class CreatePosts < ActiveRecord::Migration[6.1]
+class CreateRooms < ActiveRecord::Migration[6.1]
   def change
-    create_table :posts do |t|
+    create_table :rooms do |t|
       t.string :room_name
       t.string :room_introduction
       t.integer :usage_fee
