@@ -3,6 +3,8 @@
 <div class='main-container'>
   <div class='page-title'>ログイン</div>
 
+    <span  class='flash-message'><%= flash[:notice] %></span>
+
     <%= form_for(:session, url: login_path) do |f| %>
       <div class='form-content'>
         <div class='label-box'>
